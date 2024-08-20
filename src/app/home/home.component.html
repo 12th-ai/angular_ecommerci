@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Form</title>
+</head>
+<body>
+
+    <h1>Simple Form</h1>
+
+    <form (ngSubmit)="onSubmit()">
+        <label for="username">Username:</label>
+        <input type="text" id="username" [(ngModel)]="data.name" name="name" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" [(ngModel)]="data.email" required>
+
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" rows="4" [(ngModel)]="data.message" required></textarea>
+
+        <button type="submit">Submit</button>
+    </form>
+
+    <section *ngIf="formAction.isSubmitted">
+         <table border="2">
+            <thead>
+                <th>name</th>
+                <th>email</th>
+                 <th>message</th>
+
+
+            </thead>
+            <tbody>
+                <tr>
+                    <td>mihigo</td>
+                    <td>mihigo</td>
+                    <td>mihigo</td>
+                </tr>
+            </tbody>
+         </table>
+    </section>
+
+</body>
+</html>
