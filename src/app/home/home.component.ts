@@ -23,12 +23,21 @@ export class HomeComponent {
     message: ''
   };
 
+  message:any = [];
+
   
   formAction: FormAction = {
-    isSubmitted: true
+    isSubmitted:false
   };
 
   onSubmit(): void {
     this.formAction.isSubmitted = true;
+
+    this.message.push({
+      'name':this.data.name,
+      'email':this.data.email,
+      'message':this.data.message
+    })
+    console.log(this.message);
   }
 }

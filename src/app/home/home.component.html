@@ -25,6 +25,7 @@
     <section *ngIf="formAction.isSubmitted">
          <table border="2">
             <thead>
+                <th>#</th>
                 <th>name</th>
                 <th>email</th>
                  <th>message</th>
@@ -32,10 +33,11 @@
 
             </thead>
             <tbody>
-                <tr>
-                    <td>mihigo</td>
-                    <td>mihigo</td>
-                    <td>mihigo</td>
+                <tr *ngFor="let msg of message; let i = index;" >
+                    <td>{{i + 1 }}</td>
+                    <td>{{msg.name}}</td>
+                    <td>{{msg.email}}</td>
+                    <td>{{msg.message}}<td>
                 </tr>
             </tbody>
          </table>
